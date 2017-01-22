@@ -72,9 +72,15 @@ describe('TwoDimensionalArray', () => {
 
   describe('#addColumn', () => {
     it('add column', () => {
+      // TODO: this has side effect ( because copying reference )
       const column = [0, 0, 0];
       array.addColumn(column);
-      array.printPretty();
+
+      assert(array.get.length === 3);
+      array.get.forEach((row, index) => {
+        assert(row.length === 5);
+        assert(row[row.length - 1] === column[index]);
+      });
     });
   });
 
