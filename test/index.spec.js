@@ -1,3 +1,4 @@
+import assert from 'assert';
 import TwoDimensionalArray from '../src/index';
 
 describe('TwoDimensionalArray', () => {
@@ -26,6 +27,16 @@ describe('TwoDimensionalArray', () => {
       const column = [0, 0, 0, 0];
       array.addColumn(column);
       array.printPretty();
+    });
+  });
+
+  describe('#isMember', () => {
+    it('return true if array has member', () => {
+      assert(array.isMember(1) === true);
+    });
+
+    it('return false if array has no member', () => {
+      assert(array.isMember(100000) === false);
     });
   });
 });
