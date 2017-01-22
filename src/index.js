@@ -24,8 +24,8 @@ export default class TwoDimensionalArray {
    */
   stats() {
     return {
-      rowSize: this.rowSize,
-      columnSize: this.columnSize,
+      rowSize: this.rowSize(),
+      columnSize: this.columnSize(),
     };
   }
 

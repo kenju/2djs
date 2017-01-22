@@ -20,13 +20,8 @@ describe('TwoDimensionalArray', () => {
   describe('#stats', () => {
     it('return JSON of stats object', () => {
       const stats = array.stats();
-      Object.entries(stats).forEach(([key, value]) => {
-        if (key == 'rowSize') {
-          assert(value == 4);
-        } else if (key == 'columnSize') {
-          assert(value == 3);
-        }
-      });
+      assert(stats.rowSize === 3);
+      assert(stats.columnSize === 4);
     });
   });
 
