@@ -1,3 +1,5 @@
+const __DEBUG__ = process.env === 'development';
+
 export default class TwoDimensionalArray {
   constructor(items) {
     this.arr = items.slice();
@@ -46,6 +48,18 @@ export default class TwoDimensionalArray {
       }
     });
     return maxColumnSize;
+  }
+
+  at(posRow, posCol) {
+    try {
+      return this.arr[posRow][posCol];
+    } catch (e) {
+      if (__DEBUG__) {
+        // eslint-disable-next-line no-console
+        console.error(e);
+      }
+      return null;
+    }
   }
 
   firstRow() {

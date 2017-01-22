@@ -43,6 +43,14 @@ describe('TwoDimensionalArray', () => {
     });
   });
 
+  describe('#at', () => {
+    it('return the value of given position', () => {
+      assert(array.at(0, 0) === 1);
+      assert(array.at(2, 2) === 11);
+      assert(array.at(10000, 0) === null);
+    });
+  });
+
   describe('#firstRow', () => {
     it('return first row', () => {
       const firstRow = items[0];
