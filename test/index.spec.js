@@ -31,6 +31,24 @@ describe('TwoDimensionalArray', () => {
     });
   });
 
+  describe('#firstRow', () => {
+    it('return first row', () => {
+      const firstRow = items[0];
+      array.firstRow().forEach((columnVal, index) => {
+        assert(columnVal === firstRow[index]);
+      });
+    });
+  });
+
+  describe('#firstColumn', () => {
+    it('return first column', () => {
+      const firstColumn = [1, 5, 9];
+      array.firstColumn().forEach((rowVal, index) => {
+        assert(rowVal === firstColumn[index]);
+      });
+    });
+  });
+
   describe('#lastRow', () => {
     it('return last row', () => {
       const lastRow = items[items.length - 1];
@@ -72,8 +90,7 @@ describe('TwoDimensionalArray', () => {
 
   describe('#addColumn', () => {
     it('add column', () => {
-      // TODO: this has side effect ( because copying reference )
-      const column = [0, 0, 0];
+      const column = [2, -1, 1];
       array.addColumn(column);
 
       assert(array.get.length === 3);

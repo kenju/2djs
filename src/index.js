@@ -31,6 +31,15 @@ export default class TwoDimensionalArray {
 
   clear() {
     this.arr = [];
+    return this.arr;
+  }
+
+  firstRow() {
+    return this.arr[0];
+  }
+
+  firstColumn() {
+    return this.arr.map(row => row[0]);
   }
 
   lastRow() {
@@ -45,17 +54,20 @@ export default class TwoDimensionalArray {
     nestedArray.forEach((row) => {
       this.addRow(row);
     });
+    return this.arr;
   }
 
   addRow(row) {
     this.arr.push(row.slice());
+    return this.arr;
   }
 
   addColumn(column) {
-    column.slice().forEach((item, index) => {
-      const row = this.arr[index];
-      row.push(item);
+    this.arr = this.arr.map((row, index) => {
+      row.push(column[index]);
+      return row;
     });
+    return this.arr;
   }
 
   /**
