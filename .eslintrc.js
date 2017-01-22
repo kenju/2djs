@@ -3,6 +3,9 @@ module.exports = {
     "plugins": [
         "import"
     ],
+    "rules": {
+        "eqeqeq": 0,
+    },
     "env": {
         "es6": true,
         "mocha": true
