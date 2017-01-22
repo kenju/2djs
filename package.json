@@ -1,13 +1,18 @@
 {
   "name": "2djs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "JavaScript library for 2-dimensional array.",
   "main": "lib",
   "scripts": {
     "lint": "eslint src/**/*.js spec/**/*.js",
     "build": "babel src --out-dir lib --source-maps",
-    "test": "mocha test"
+    "test": "mocha test",
+    "prepublish": "yarn build"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/kenju/2djs.git"
