@@ -1,6 +1,6 @@
 export default class TwoDimensionalArray {
   constructor(items) {
-    this.arr = items || [[]];
+    this.arr = items.slice();
   }
 
   stats() {
@@ -14,12 +14,24 @@ export default class TwoDimensionalArray {
     rows   : ${this.arr.length}
     columns: ${maxColumnSize}
     `;
+    // eslint-disable-next-line no-console
     console.log(output);
   }
 
   printPretty() {
     this.arr.forEach((row) => {
+      // eslint-disable-next-line no-console
       console.log(row);
+    });
+  }
+
+  clear() {
+    this.arr = [[]];
+  }
+
+  add(nestedArray) {
+    nestedArray.forEach((row) => {
+      this.arr.push(row.slice());
     });
   }
 
@@ -27,14 +39,14 @@ export default class TwoDimensionalArray {
    * addRow :: [any] -> [any] -> [any]
    */
   addRow(items) {
-    this.arr.push(items);
+    this.arr.push(items.slice());
   }
 
   /**
    * addColumn :: [any] -> [any] -> [any]
    */
   addColumn(items) {
-    items.forEach((item, index) => {
+    items.slice().forEach((item, index) => {
       const row = this.arr[index];
       row.push(item);
     });
