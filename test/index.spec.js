@@ -51,6 +51,42 @@ describe('TwoDimensionalArray', () => {
     });
   });
 
+  describe('#row', () => {
+    it('return the row of given position', () => {
+      const row0 = array.row(0);
+      const row2 = array.row(2);
+      assert(row0 === items[0]);
+      assert(row2 === items[2]);
+    });
+  });
+
+  describe('#column', () => {
+    it('return the column of given position', () => {
+      const column0 = array.column(0);
+      const column2 = array.column(2);
+      column0.forEach((columnVal, index) => assert(columnVal === [1, 5, 9][index]));
+      column2.forEach((columnVal, index) => assert(columnVal === [3, 7, 11][index]));
+    });
+  });
+
+  describe('#rows', () => {
+    it('return the array of rows', () => {
+      const rows = array.rows();
+      rows.forEach((row, index) => {
+        assert(row === items[index]);
+      });
+    });
+  });
+
+  describe('#columns', () => {
+    it('return the array of columns', () => {
+      const columns = array.columns();
+      columns.forEach((column, index) => {
+        // TODO:
+      });
+    });
+  });
+
   describe('#firstRow', () => {
     it('return first row', () => {
       const firstRow = items[0];

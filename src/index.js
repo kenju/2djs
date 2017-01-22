@@ -62,6 +62,22 @@ export default class TwoDimensionalArray {
     }
   }
 
+  row(pos) {
+    return this.arr[pos];
+  }
+
+  column(pos) {
+    return this.arr.map(row => row[pos]);
+  }
+
+  rows() {
+    return this.arr;
+  }
+
+  columns() {
+    return null;
+  }
+
   firstRow() {
     return this.arr[0];
   }
