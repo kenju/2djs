@@ -1,4 +1,4 @@
-const __DEBUG__ = process.env === 'development';
+const DEBUG = process.env === 'development';
 
 export default class TwoDimensionalArray {
   constructor(items) {
@@ -54,7 +54,7 @@ export default class TwoDimensionalArray {
     try {
       return this.arr[posRow][posCol];
     } catch (e) {
-      if (__DEBUG__) {
+      if (DEBUG) {
         // eslint-disable-next-line no-console
         console.error(e);
       }
@@ -74,8 +74,20 @@ export default class TwoDimensionalArray {
     return this.arr;
   }
 
+  /**
+   * O(n**2)
+   */
   columns() {
-    return null;
+    const columns = [];
+    this.arr.forEach((row) => {
+      row.forEach((rowVal, rowPos) => {
+        if (!columns[rowPos]) {
+          columns[rowPos] = [];
+        }
+        columns[rowPos].push(rowVal);
+      });
+    });
+    return columns;
   }
 
   firstRow() {

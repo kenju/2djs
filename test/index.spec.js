@@ -57,6 +57,8 @@ describe('TwoDimensionalArray', () => {
       const row2 = array.row(2);
       assert(row0 === items[0]);
       assert(row2 === items[2]);
+      row0.forEach((rowVal, index) => assert(rowVal === items[0][index]));
+      row2.forEach((rowVal, index) => assert(rowVal === items[2][index]));
     });
   });
 
@@ -73,7 +75,7 @@ describe('TwoDimensionalArray', () => {
     it('return the array of rows', () => {
       const rows = array.rows();
       rows.forEach((row, index) => {
-        assert(row === items[index]);
+        row.forEach((rowVal, rowPos) => assert(rowVal === items[index][rowPos]));
       });
     });
   });
@@ -82,7 +84,7 @@ describe('TwoDimensionalArray', () => {
     it('return the array of columns', () => {
       const columns = array.columns();
       columns.forEach((column, index) => {
-        // TODO:
+        column.forEach((columnVal, columnPos) => assert(columnVal === items[columnPos][index]));
       });
     });
   });
