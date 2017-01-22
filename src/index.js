@@ -1,5 +1,8 @@
 const DEBUG = process.env === 'development';
 
+/**
+ * TODO: cache with WeakMap
+ */
 export default class TwoDimensionalArray {
   constructor(items) {
     this.arr = items.slice();
@@ -159,10 +162,7 @@ export default class TwoDimensionalArray {
    * O(n)
    */
   addColumn(column) {
-    this.arr = this.arr.map((row, index) => {
-      row.push(column[index]);
-      return row;
-    });
+    this.arr = this.arr.map((row, index) => row.concat(column[index]));
     return this.arr;
   }
 

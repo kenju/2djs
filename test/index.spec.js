@@ -163,12 +163,10 @@ describe('TwoDimensionalArray', () => {
 
   describe('#isMember', () => {
     it('return true if array has member', () => {
-      array.printPretty();
       assert(array.isMember(1) === true);
     });
 
     it('return false if array has no member', () => {
-      array.printPretty();
       assert(array.isMember(100000) === false);
     });
   });
