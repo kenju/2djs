@@ -134,6 +134,8 @@ describe('TwoDimensionalArray', () => {
         [17, 18, 19, 20],
       ];
       array.add(arr);
+      array.row(3).forEach((columnVal, index) => { assert(columnVal === arr[0][index]); });
+      array.row(4).forEach((columnVal, index) => { assert(columnVal === arr[1][index]); });
     });
   });
 
