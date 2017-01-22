@@ -3,6 +3,10 @@ export default class TwoDimensionalArray {
     this.arr = items.slice();
   }
 
+  get get() {
+    return this.arr;
+  }
+
   stats() {
     let maxColumnSize = 0;
     this.arr.forEach((row) => {
@@ -26,27 +30,29 @@ export default class TwoDimensionalArray {
   }
 
   clear() {
-    this.arr = [[]];
+    this.arr = [];
+  }
+
+  lastRow() {
+    return this.arr[this.arr.length - 1];
+  }
+
+  lastColumn() {
+    return this.arr.map(row => row[row.length - 1]);
   }
 
   add(nestedArray) {
     nestedArray.forEach((row) => {
-      this.arr.push(row.slice());
+      this.addRow(row);
     });
   }
 
-  /**
-   * addRow :: [any] -> [any] -> [any]
-   */
-  addRow(items) {
-    this.arr.push(items.slice());
+  addRow(row) {
+    this.arr.push(row.slice());
   }
 
-  /**
-   * addColumn :: [any] -> [any] -> [any]
-   */
-  addColumn(items) {
-    items.slice().forEach((item, index) => {
+  addColumn(column) {
+    column.slice().forEach((item, index) => {
       const row = this.arr[index];
       row.push(item);
     });

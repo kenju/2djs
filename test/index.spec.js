@@ -23,6 +23,32 @@ describe('TwoDimensionalArray', () => {
     });
   });
 
+  describe('#clear', () => {
+    it('clear array instance', () => {
+      assert(array.get.length === 3);
+      array.clear();
+      assert(array.get.length === 0);
+    });
+  });
+
+  describe('#lastRow', () => {
+    it('return last row', () => {
+      const lastRow = items[items.length - 1];
+      array.lastRow().forEach((columnVal, index) => {
+        assert(columnVal === lastRow[index]);
+      });
+    });
+  });
+
+  describe('#lastColumn', () => {
+    it('return last column', () => {
+      const lastColumn = [4, 8, 12];
+      array.lastColumn().forEach((rowVal, index) => {
+        assert(rowVal === lastColumn[index]);
+      });
+    });
+  });
+
   describe('#add', () => {
     it('add a two-dimensional array', () => {
       const arr = [
@@ -30,7 +56,6 @@ describe('TwoDimensionalArray', () => {
         [17, 18, 19, 20],
       ];
       array.add(arr);
-      array.printPretty();
     });
   });
 
@@ -38,7 +63,10 @@ describe('TwoDimensionalArray', () => {
     it('add row', () => {
       const row = [13, 14, 15, 16];
       array.addRow(row);
-      array.printPretty();
+      assert(array.get.length === 4);
+      array.lastRow().forEach((columnVal, index) => {
+        assert(columnVal === row[index]);
+      });
     });
   });
 
