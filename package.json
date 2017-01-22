@@ -1,0 +1,34 @@
+{
+  "name": "2djs",
+  "version": "0.0.1",
+  "description": "JavaScript library for 2-dimensional array.",
+  "main": "lib",
+  "scripts": {
+    "lint": "eslint src/**/*.js spec/**/*.js",
+    "build": "babel src --out-dir lib --source-maps",
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kenju/2djs.git"
+  },
+  "keywords": [
+    "Array",
+    "two-dimensinal"
+  ],
+  "author": "kenju",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kenju/2djs/issues"
+  },
+  "homepage": "https://github.com/kenju/2djs#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0"
+  }
+}
