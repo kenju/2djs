@@ -31,6 +31,18 @@ describe('TwoDimensionalArray', () => {
     });
   });
 
+  describe('#rowSize', () => {
+    it('return the size of rows', () => {
+      assert(array.rowSize() === 3);
+    });
+  });
+
+  describe('#columnSize', () => {
+    it('return the size of columns', () => {
+      assert(array.columnSize() === 4);
+    });
+  });
+
   describe('#firstRow', () => {
     it('return first row', () => {
       const firstRow = items[0];

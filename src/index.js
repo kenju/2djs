@@ -34,6 +34,20 @@ export default class TwoDimensionalArray {
     return this.arr;
   }
 
+  rowSize() {
+    return this.arr.length;
+  }
+
+  columnSize() {
+    let maxColumnSize = 0;
+    this.arr.forEach((row) => {
+      if (row.length > maxColumnSize) {
+        maxColumnSize = row.length;
+      }
+    });
+    return maxColumnSize;
+  }
+
   firstRow() {
     return this.arr[0];
   }
