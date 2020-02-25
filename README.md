@@ -208,7 +208,7 @@ array.isMember(1000); // false
 
 ## License
 
-Copyright (c) 2017 kenju
+Copyright (c) 2020 kenju
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
