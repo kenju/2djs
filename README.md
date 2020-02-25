@@ -4,33 +4,6 @@
 
 JavaScript library for 2-dimensional array.
 
-<!-- TOC depthFrom:2 -->
-
-- [Install](#install)
-- [API](#api)
-  - [`constructor`](#constructor)
-  - [`get()`](#get)
-  - [`stat()`](#stat)
-  - [`clear()`](#clear)
-  - [`rowSize()`](#rowsize)
-  - [`columnSize()`](#columnsize)
-  - [`at(rowPosition, columnPosition)`](#atrowposition-columnposition)
-  - [`row(position)`](#rowposition)
-  - [`column(position)`](#columnposition)
-  - [`rows()`](#rows)
-  - [`columns()`](#columns)
-  - [`firstRow()`](#firstrow)
-  - [`firstColumn()`](#firstcolumn)
-  - [`lastRow()`](#lastrow)
-  - [`lastColumn()`](#lastcolumn)
-  - [`add(twoDimensionalArray)`](#addtwodimensionalarray)
-  - [`addRow(row)`](#addrowrow)
-  - [`addColumn(column)`](#addcolumncolumn)
-  - [`isMember(item)`](#ismemberitem)
-- [License](#license)
-
-<!-- /TOC -->
-
 ## Install
 
 ```bash
