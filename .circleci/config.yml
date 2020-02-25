@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:12
+
+    environment:
+      TZ: '/usr/share/zoneinfo/Asia/Tokyo'
+      NODE_ENV: test
+
+    working_directory: /home/ubuntu/workspace
+
+    parallelism: 1
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          name: Restore Cache for Yarn
+          keys:
+            - yarn-{{ .Branch }}-{{ checksum "yarn.json" }}
+            - yarn-{{ .Branch }}-
+      - run: yarn install
+      - save_cache:
+          name: Save Cache for Yarn
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.json" }}
+          paths:
+            - /home/ubuntu/workspace/node_modules
+      - run: yarn test
