@@ -18,12 +18,12 @@ jobs:
       - restore_cache:
           name: Restore Cache for Yarn
           keys:
-            - yarn-{{ .Branch }}-{{ checksum "yarn.json" }}
+            - yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
             - yarn-{{ .Branch }}-
       - run: yarn install
       - save_cache:
           name: Save Cache for Yarn
-          key: yarn-{{ .Branch }}-{{ checksum "yarn.json" }}
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - /home/ubuntu/workspace/node_modules
       - run: yarn test
