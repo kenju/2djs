@@ -4,7 +4,7 @@
   "description": "JavaScript library for 2-dimensional array.",
   "main": "lib",
   "scripts": {
-    "lint": "eslint src/**/*.js spec/**/*.js",
+    "lint": "eslint src/**/*.js test/**/*.js",
     "build": "babel src --out-dir lib --source-maps",
     "test": "mocha test",
     "prepublish": "yarn build"
@@ -31,9 +31,6 @@
     "babel-cli": "^6.22.2",
     "babel-preset-es2015": "^6.22.0",
     "babel-register": "^6.22.0",
-    "eslint": "^3.14.0",
-    "eslint-config-airbnb-base": "^11.0.1",
-    "eslint-plugin-import": "^2.2.0",
     "mocha": "^3.2.0"
   }
 }
