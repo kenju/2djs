@@ -17,7 +17,6 @@ export default class TwoDimensionalArray {
    */
   printPretty() {
     this.arr.forEach((row) => {
-      // eslint-disable-next-line no-console
       console.log(row);
     });
   }
@@ -68,7 +67,6 @@ export default class TwoDimensionalArray {
       return this.arr[posRow][posCol];
     } catch (e) {
       if (DEBUG) {
-        // eslint-disable-next-line no-console
         console.error(e);
       }
       return null;

@@ -4,7 +4,6 @@
   "description": "JavaScript library for 2-dimensional array.",
   "main": "lib",
   "scripts": {
-    "lint": "eslint src/**/*.js test/**/*.js",
     "build": "babel src --out-dir lib --source-maps",
     "test": "mocha test",
     "prepublish": "yarn build"
@@ -28,9 +27,9 @@
   },
   "homepage": "https://github.com/kenju/2djs#readme",
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "mocha": "^7.1.0"
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "babel-register": "*",
+    "mocha": "*"
   }
 }
