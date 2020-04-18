@@ -1,19 +1,11 @@
 # 2djs [![CircleCI](https://circleci.com/gh/kenju/2djs.svg?style=svg)](https://circleci.com/gh/kenju/2djs)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/kenju/2djs.svg)](https://greenkeeper.io/)
-
 JavaScript library for 2-dimensional array.
 
 ## Install
 
 ```bash
 npm install --save 2djs
-```
-
-or,
-
-```bash
-yarn add 2djs
 ```
 
 ## API
